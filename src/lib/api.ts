@@ -29,83 +29,112 @@ export async function fetchProductData(lang: 'en' | 'bn' = 'en'): Promise<ApiRes
 
 // Mock data for development/testing
 export const mockProductData: ApiResponse = {
-  success: true,
+  code: 200,
   data: {
     slug: 'ielts-course',
-    id: 1,
+    id: 153,
     title: 'IELTS Course by Munzereen Shahid',
     description: '<p>Master the IELTS exam with our comprehensive course designed by expert instructor Munzereen Shahid. This course covers all four modules: Listening, Reading, Writing, and Speaking.</p>',
+    platform: 'skills',
+    type: 'regular',
+    modality: 'recorded',
+    old_info: {
+      cat_id: 21,
+      course_id: 50,
+      platform: 'skills',
+      skills_cat_id: 90,
+      slug: 'ielts-course'
+    },
+    start_at: '',
     media: [
       {
-        id: 1,
-        type: 'video',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-        thumbnail: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
-        title: 'Course Trailer'
+        name: 'preview_gallery',
+        resource_type: 'video',
+        resource_value: 'dQw4w9WgXcQ',
+        thumbnail_url: 'https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg'
       }
     ],
     checklist: [
-      { id: 1, text: 'Complete course materials', icon: '✓' },
-      { id: 2, text: 'Practice tests included', icon: '✓' },
-      { id: 3, text: 'Expert feedback available', icon: '✓' },
-      { id: 4, text: 'Lifetime access', icon: '✓' }
+      { color: 'black', icon: 'https://cdn.10minuteschool.com/images/PDP/course-fact-icons/course_participants.png', id: 'meta1', list_page_visibility: true, text: 'Total Enrolled 33031' },
+      { color: 'black', icon: 'https://cdn.10minuteschool.com/images/PDP/course-fact-icons/time.png', id: 'meta2', list_page_visibility: false, text: 'Time Required 50 hours' },
+      { color: 'black', icon: 'https://cdn.10minuteschool.com/images/PDP/course-fact-icons/video.png', id: 'meta3', list_page_visibility: true, text: '54 Videos' },
+      { color: 'black', icon: 'https://cdn.10minuteschool.com/images/PDP/course-fact-icons/mock_test.png', id: 'meta4', list_page_visibility: false, text: '10 Reading & 10 Listening Mocktests' }
     ],
-    seo: {
-      title: 'IELTS Course by Munzereen Shahid - 10 Minute School',
-      description: 'Master IELTS with our comprehensive course. Expert guidance, practice tests, and lifetime access.',
-      keywords: ['IELTS', 'English', 'Course', 'Munzereen Shahid', '10 Minute School'],
-      og_image: 'https://via.placeholder.com/1200x630'
-    },
+    seo: [],
     cta_text: {
-      primary: 'Enroll Now',
-      secondary: 'Start Learning Today'
+      name: 'Enroll',
+      value: 'enroll'
     },
     sections: [
       {
-        id: 1,
-        type: 'instructor',
-        title: 'Course Instructor',
-        content: 'Munzereen Shahid is an experienced IELTS instructor with over 10 years of teaching experience.',
-        items: [
-          { name: 'Munzereen Shahid', role: 'IELTS Expert', experience: '10+ years' }
+        type: 'instructors',
+        name: 'Course instructor',
+        description: '',
+        bg_color: '',
+        order_idx: 2,
+        values: [
+          {
+            description: '<p>MSc (English), University of Oxford (UK);<br>BA, MA (English), University of Dhaka;<br>IELTS: 8.5</p>',
+            has_instructor_page: true,
+            image: 'https://cdn.10minuteschool.com/images/skills/lp/ms_onset.jpg',
+            name: 'Munzereen Shahid',
+            short_description: 'Course Instructor',
+            slug: 'munzereen-shahid'
+          }
         ]
       },
       {
-        id: 2,
         type: 'features',
-        title: 'How the Course is Laid Out',
-        content: 'Our course is structured to provide comprehensive coverage of all IELTS modules.',
-        items: [
-          'Module 1: Listening Skills',
-          'Module 2: Reading Comprehension',
-          'Module 3: Writing Tasks',
-          'Module 4: Speaking Practice'
+        name: 'How the course is laid out',
+        description: '',
+        bg_color: '',
+        order_idx: 3,
+        values: [
+          {
+            icon: 'https://s3.ap-southeast-1.amazonaws.com/cdn.10minuteschool.com/images/Group_1116604651_1684834874567.png',
+            id: 'meta1',
+            subtitle: 'IELTS Academic ও General Training এর Overview, Format ও প্রশ্নের ধরন নিয়ে in-depth আলোচনা',
+            title: '৫০+ ভিডিও লেকচার'
+          }
         ]
       },
       {
-        id: 3,
         type: 'pointers',
-        title: 'What You Will Learn',
-        content: 'By the end of this course, you will have mastered all essential IELTS skills.',
-        items: [
-          'Advanced listening techniques',
-          'Reading strategies for different question types',
-          'Writing task 1 and 2 formats',
-          'Speaking confidence and fluency'
+        name: 'What you will learn by doing the course',
+        description: '',
+        bg_color: '',
+        order_idx: 5,
+        values: [
+          {
+            color: 'black',
+            icon: '0',
+            id: 'meta1',
+            text: 'Detailed rules and regulations of each module of the IELTS test'
+          }
         ]
       },
       {
-        id: 4,
         type: 'about',
-        title: 'Course Details',
-        content: 'This comprehensive course includes everything you need to succeed in your IELTS exam.',
-        items: [
-          'Duration: 40+ hours of content',
-          'Practice tests: 10 full mock tests',
-          'Support: 24/7 instructor support',
-          'Access: Lifetime access to all materials'
+        name: 'Course details',
+        description: '',
+        bg_color: '',
+        order_idx: 7,
+        values: [
+          {
+            description: '<li>Those who aim to go abroad for work or higher education</li>',
+            icon: '0',
+            id: 'meta1',
+            title: '<h2><b>This IELTS course is for</b></h2>'
+          }
         ]
       }
-    ]
-  }
+    ],
+    is_cohort_based_course: false,
+    secondary_cta_group: [],
+    delivery_method: 'pathao'
+  },
+  error: [],
+  message: 'Success',
+  payload: [],
+  status_code: 200
 } 
