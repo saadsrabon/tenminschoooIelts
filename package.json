@@ -1,5 +1,6 @@
 {
   "name": "ielts-course-page",
+  "author":"saad",
   "version": "0.1.0",
   "private": true,
   "scripts": {
