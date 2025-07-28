@@ -16,7 +16,7 @@ export default function VideoPlayer({ media }: VideoPlayerProps) {
     return match && match[2].length === 11 ? match[2] : null
   }
 
-  const videoId = getYouTubeVideoId(media.url)
+  const videoId = getYouTubeVideoId(media.resource_value)
 
   if (!videoId) {
     return (
@@ -42,7 +42,7 @@ export default function VideoPlayer({ media }: VideoPlayerProps) {
           {isPlaying ? (
             <iframe
               src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-              title={media.title || 'Course Trailer'}
+              title={media.name || 'Course Trailer'}
               className="w-full h-full"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -51,7 +51,7 @@ export default function VideoPlayer({ media }: VideoPlayerProps) {
             <div className="relative w-full h-full">
               <img
                 src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-                alt={media.title || 'Course Trailer'}
+                alt={media.name || 'Course Trailer'}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
