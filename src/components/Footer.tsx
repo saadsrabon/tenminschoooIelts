@@ -10,7 +10,7 @@ export default function Footer() {
                 alt="10 Minute School Logo" 
                 className="h-8 w-auto mr-3"
               />
-              <h3 className="text-2xl font-bold">10 Minute School</h3>
+          
             </div>
             <p className="text-gray-600 mb-4">
               Empowering students with quality education through innovative online learning platforms.

@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
   <rect width="32" height="32" rx="6" fill="#10B981"/>
-  <text x="16" y="22" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">10</text>
-  <text x="16" y="28" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">MS</text>
+  <!-- 10 Minute School Logo - Simplified Version -->
+  <g transform="translate(4, 4)">
+    <!-- "10" in a rounded rectangle -->
+    <rect x="2" y="2" width="20" height="20" rx="4" fill="white"/>
+    <text x="12" y="14" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#10B981">10</text>
+    <!-- "MS" below -->
+    <text x="12" y="26" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">MS</text>
+  </g>
 </svg> 
