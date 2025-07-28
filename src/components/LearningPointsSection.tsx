@@ -18,7 +18,7 @@ export default function LearningPointsSection({ section }: LearningPointsSection
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {section.items?.map((point: string, index: number) => (
+          {section.values?.map((point: string, index: number) => (
             <div key={index} className="flex items-start space-x-4">
               <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                 <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">

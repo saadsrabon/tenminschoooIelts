@@ -18,7 +18,7 @@ export default function InstructorSection({ section }: InstructorSectionProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {section.items?.map((instructor: any, index: number) => (
+          {section.values?.map((instructor: any, index: number) => (
             <div key={index} className="bg-gray-50 rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-300">
               <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary-100 flex items-center justify-center">
                 <svg className="w-12 h-12 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
