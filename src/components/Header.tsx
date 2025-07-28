@@ -46,13 +46,13 @@ export default function Header({ title, currentLang }: HeaderProps) {
 
         {/* Right Side - Navigation Links - Hidden on mobile */}
         <div className="hidden xl:flex items-center gap-3 lg:gap-4 text-gray-700 text-xs lg:text-sm font-medium">
-          <button className="hover:text-primary-600 whitespace-nowrap">সকল কোর্স</button>
-          <button className="hover:text-primary-600 whitespace-nowrap">বই</button>
-          <button className="hover:text-primary-600 whitespace-nowrap">ব্লগ</button>
-          <button className="hover:text-primary-600 whitespace-nowrap">কুইজ</button>
-          <button className="hover:text-primary-600 whitespace-nowrap">চাকরি প্রস্তুতি</button>
-          <button className="hover:text-primary-600 whitespace-nowrap">ভার্সিটি ভর্তি প্রস্তুতি</button>
-          <button className="hover:text-primary-600 whitespace-nowrap">ফ্রি ডাউনলোড</button>
+                          <button className="hover:text-green-600 whitespace-nowrap">সকল কোর্স</button>
+                <button className="hover:text-green-600 whitespace-nowrap">বই</button>
+                <button className="hover:text-green-600 whitespace-nowrap">ব্লগ</button>
+                <button className="hover:text-green-600 whitespace-nowrap">কুইজ</button>
+                <button className="hover:text-green-600 whitespace-nowrap">চাকরি প্রস্তুতি</button>
+                <button className="hover:text-green-600 whitespace-nowrap">ভার্সিটি ভর্তি প্রস্তুতি</button>
+                <button className="hover:text-green-600 whitespace-nowrap">ফ্রি ডাউনলোড</button>
         </div>
 
         {/* Right Side - Language, Phone, Login */}
@@ -60,7 +60,7 @@ export default function Header({ title, currentLang }: HeaderProps) {
           {/* Language Switcher */}
           <button
             onClick={() => handleLanguageChange(currentLang === 'en' ? 'bn' : 'en')}
-            className="border border-gray-300 rounded px-1.5 sm:px-2 py-1 text-xs flex items-center gap-1 hover:bg-gray-100"
+            className="border border-gray-300 rounded px-1.5 sm:px-2 py-1  ml-4 text-xs flex items-center gap-1 hover:bg-gray-100"
           >
             <span className="text-gray-500 hidden sm:inline">
               <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeWidth="2" d="M12 3v18m9-9H3"/></svg>
@@ -82,7 +82,7 @@ export default function Header({ title, currentLang }: HeaderProps) {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden inline-flex items-center justify-center p-1.5 sm:p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100"
+            className="lg:hidden inline-flex items-center justify-center p-1.5 sm:p-2 rounded-md text-gray-700 hover:text-green-600 hover:bg-gray-100"
           >
             <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -129,13 +129,13 @@ export default function Header({ title, currentLang }: HeaderProps) {
             <button className="text-left py-2 border-b border-gray-100">ফ্রি ডাউনলোড</button>
             
             {/* Kids English Ad for Mobile */}
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg px-3 py-2 mt-4">
+                            <div className="flex items-center gap-2 bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg px-3 py-2 mt-4">
               <div className="flex items-center gap-1">
                 <span className="text-2xl">🐘</span>
                 <span className="text-2xl">🐒</span>
               </div>
               <span className="text-sm font-medium text-gray-700">Kids English</span>
-              <button className="text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition-colors">
+                              <button className="text-sm bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition-colors">
                 ক্লিক করুন
               </button>
             </div>

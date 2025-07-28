@@ -27,7 +27,7 @@ export default function CourseInstructorSection({ instructorSection }: CourseIns
       {instructorSection.values.map((instructor: Instructor, index: number) => (
         <div key={index} className="flex flex-col sm:flex-row items-start gap-4 lg:gap-6">
           {/* Instructor Image */}
-          <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center mx-auto sm:mx-0 flex-shrink-0">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center mx-auto sm:mx-0 flex-shrink-0">
             {instructor.image ? (
               <img 
                 src={instructor.image} 

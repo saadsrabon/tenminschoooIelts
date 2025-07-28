@@ -26,7 +26,7 @@ export default function CourseFeaturesSection({ featuresSection }: CourseFeature
       </h2>
       
       {/* Dark blue container with rounded corners */}
-      <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-xl p-6 sm:p-8 lg:p-10">
+              <div className="bg-gradient-to-br from-green-900 to-green-800 rounded-xl p-6 sm:p-8 lg:p-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {featuresSection.values.map((feature: Feature, index: number) => (
             <div key={index} className="flex items-start gap-4 sm:gap-5">
@@ -50,7 +50,7 @@ export default function CourseFeaturesSection({ featuresSection }: CourseFeature
                 <h3 className="text-white text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
+                <p className="text-green-100 text-sm sm:text-base leading-relaxed">
                   {feature.subtitle}
                 </p>
               </div>

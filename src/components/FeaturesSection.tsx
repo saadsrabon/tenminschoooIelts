@@ -20,8 +20,8 @@ export default function FeaturesSection({ section }: FeaturesSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {section.values?.map((feature: any, index: number) => (
             <div key={index} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-primary-600 font-bold text-lg">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <span className="text-green-600 font-bold text-lg">
                   {index + 1}
                 </span>
               </div>
