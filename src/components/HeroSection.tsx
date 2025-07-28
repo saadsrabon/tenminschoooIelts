@@ -10,6 +10,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   
   // Filter only video media items
@@ -51,6 +52,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
     return `https://www.youtube.com/embed/${cleanVideoId}?autoplay=1&rel=0&modestbranding=1&controls=1&showinfo=0`;
   };
 
+  const handleEnrollClick = () => {
+    setShowSuccessMessage(true);
+    // Auto-hide the message after 5 seconds
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 5000);
+  };
+
   return (
     <section 
       className="text-white py-8 sm:py-12 lg:py-16 xl:py-20 relative"
@@ -78,7 +87,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
               className="text-sm sm:text-base lg:text-lg xl:text-xl mb-6 lg:mb-8 opacity-90 leading-relaxed"
               dangerouslySetInnerHTML={{ __html: data.description }}
             />
-            <button className="bg-green-500 hover:bg-green-600 px-6 py-3 lg:px-8 lg:py-4 xl:px-10 xl:py-5 rounded-lg font-semibold transition-colors text-sm sm:text-base lg:text-lg xl:text-xl w-full sm:w-auto">
+            <button 
+              onClick={handleEnrollClick}
+              className="bg-green-500 hover:bg-green-600 px-6 py-3 lg:px-8 lg:py-4 xl:px-10 xl:py-5 rounded-lg font-semibold transition-colors text-sm sm:text-base lg:text-lg xl:text-xl w-full sm:w-auto"
+            >
               {data.cta_text?.name || 'কোর্সটি কিনুন'}
             </button>
           </div>
@@ -174,6 +186,38 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
           </div>
         </div>
       </div>
+
+      {/* Success Message Modal */}
+      {showSuccessMessage && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl p-6 sm:p-8 max-w-md w-full mx-4">
+            <div className="text-center">
+              {/* Success Icon */}
+              <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              
+              {/* Success Message */}
+              <h3 className="text-lg font-medium text-gray-900 mb-2">
+                Enrollment Successful! 🎉
+              </h3>
+              <p className="text-sm text-gray-600 mb-6">
+                You have successfully enrolled to the course of <strong>IELTS Course by Munzereen Shahid</strong>
+              </p>
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setShowSuccessMessage(false)}
+                className="w-full bg-green-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors"
+              >
+                Continue Learning
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
