@@ -47,7 +47,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-300">
-            © 2024 10 Minute School. All rights reserved.
+          2015 - 2025 Copyright © 10 Minute School. All rights reserved.
           </p>
         </div>
       </div>

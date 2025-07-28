@@ -55,12 +55,12 @@ export default function CourseFeatureExplanationsSection({ featureExplanationsSe
               
               {/* Right Side - Visual */}
               <div className="lg:w-80 flex-shrink-0">
-                {feature.video_thumbnail ? (
+                {feature.file_url ? (
                   <div className="relative rounded-lg overflow-hidden shadow-lg">
                     <img 
-                      src={feature.video_thumbnail} 
+                      src={feature.file_url} 
                       alt={feature.title}
-                      className="w-full h-48 sm:h-56 object-cover"
+                      className="w-full h-48 sm:h-56 object-contain"
                     />
                     {/* Overlay for better text readability if needed */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -80,22 +80,7 @@ export default function CourseFeatureExplanationsSection({ featureExplanationsSe
               </div>
             </div>
             
-            {/* File Link (if available) */}
-            {feature.file_url && (
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <a 
-                  href={feature.file_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-green-600 hover:text-green-800 text-sm sm:text-base font-medium"
-                >
-                  <span>View {feature.file_type || 'File'}</span>
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-            )}
+           
           </div>
         ))}
       </div>

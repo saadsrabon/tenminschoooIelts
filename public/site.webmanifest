@@ -1,0 +1,25 @@
+{
+  "name": "IELTS Course by Munzereen Shahid",
+  "short_name": "IELTS Course",
+  "description": "Master IELTS with our comprehensive course. Expert guidance, practice tests, and lifetime access.",
+  "start_url": "/ielts-course",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10B981",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "bn",
+  "dir": "ltr"
+} 

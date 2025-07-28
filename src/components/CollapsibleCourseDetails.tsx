@@ -17,7 +17,12 @@ const CollapsibleCourseDetails: React.FC<CollapsibleCourseDetailsProps> = ({ abo
   const [expandedSections, setExpandedSections] = useState<number[]>([0]); // Start with first section expanded
 
   // Create sections from the about data
-  const sections = [
+  const sections = aboutSection?.values?.map((item, index) => ({
+    id: index,
+    title: item.title ? item.title.replace(/<[^>]*>/g, '') : `Section ${index + 1}`,
+    content: item.description,
+    isHtml: true
+  })) || [
     {
       id: 0,
       title: "This IELTS course is for",
@@ -26,26 +31,8 @@ const CollapsibleCourseDetails: React.FC<CollapsibleCourseDetailsProps> = ({ abo
         "Those who want to apply for permanent residency abroad", 
         "Those who have appeared for the IELTS exam but are not satisfied with their band score",
         "Those who want to improve their reading, writing, listening, and speaking skills through IELTS for work, business, or personal interest"
-      ]
-    },
-    {
-      id: 1,
-      title: "About the IELTS course",
-      content: aboutSection?.values[0]?.description ? [aboutSection.values[0].description] : [
-        "Our comprehensive IELTS course covers all four modules: Listening, Reading, Writing, and Speaking.",
-        "Designed by expert instructor Munzereen Shahid with over 10 years of experience.",
-        "Includes practice tests, mock exams, and personalized feedback."
-      ]
-    },
-    {
-      id: 2,
-      title: "This IELTS course will help you in the following ways:",
-      content: aboutSection?.values[1]?.description ? [aboutSection.values[1].description] : [
-        "Improve your overall band score by 1-2 points",
-        "Master all four IELTS modules with confidence",
-        "Learn proven strategies and techniques",
-        "Get access to exclusive study materials and resources"
-      ]
+      ],
+      isHtml: false
     }
   ];
 
@@ -80,13 +67,20 @@ const CollapsibleCourseDetails: React.FC<CollapsibleCourseDetailsProps> = ({ abo
             
             {expandedSections.includes(section.id) && (
               <div className="pl-4 pb-3">
-                <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
-                  {section.content.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-gray-700">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                {section.isHtml ? (
+                  <div 
+                    className="text-gray-700 text-sm sm:text-base leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: section.content }}
+                  />
+                ) : (
+                  <ul className="list-disc list-inside space-y-2 text-gray-700 text-sm sm:text-base">
+                    {section.content.map((item: string, itemIndex: number) => (
+                      <li key={itemIndex} className="text-gray-700">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             )}
           </div>
