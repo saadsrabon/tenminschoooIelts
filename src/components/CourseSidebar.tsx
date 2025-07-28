@@ -82,10 +82,10 @@ export default function CourseSidebar({ data }: CourseSidebarProps) {
           {/* CTA Buttons */}
           <div className="space-y-3">
             <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-4 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
-              {data.cta_text?.primary || 'Enroll Now'}
+              {data.cta_text?.value || 'Enroll Now'}
             </button>
             <button className="w-full border border-gray-300 text-gray-700 font-semibold py-3 px-4 rounded-lg hover:bg-gray-50 transition-all duration-200">
-              {data.cta_text?.secondary || 'Add to Wishlist'}
+              {data.cta_text?.name || 'Add to Wishlist'}
             </button>
           </div>
 
