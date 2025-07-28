@@ -1,7 +1,8 @@
 # IELTS Course Landing Page
 
 A comprehensive, modern landing page for the **IELTS Course by Munzereen Shahid** from **10 Minute School**. Built with Next.js 14, TypeScript, and TailwindCSS, featuring interactive video players, enrollment system, and complete SEO optimization.
-
+## Live SITE 
+harmonious-lolly-eb5d68.netlify.app/
 ## 🚀 Features
 
 ### **Core Functionality**
