@@ -13,7 +13,7 @@ export default function LearningPointsSection({ section }: LearningPointsSection
           {section.name}
         </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {section.content}
+            {section.description}
           </p>
         </div>
 
